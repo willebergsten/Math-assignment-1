@@ -39,7 +39,7 @@ def g(n: int):
 def h(theta: float, x: float, y: float):
     cos_term = math.cos(theta) * (x - (x * y) * x)
     sin_term = math.sin(theta) * (y - x)
-    sqrt_term = math.sqrt((x + y))
+    sqrt_term = math.sqrt((x + y) * x)
 
     return cos_term + sin_term + sqrt_term
 
@@ -100,7 +100,7 @@ def tests():
 
     test_h1 = h(0.0, 2.0, 2.0)
     print(f"h1(0.0, 2.0, 2.0) = {test_h1}")
-    assert math.isclose(test_h1, -6.0 + math.sqrt(4.0))
+    assert math.isclose(test_h1, -6.0 + math.sqrt(8.0))
 
     test_h2 = h(0.0, 1.0, 3.0)
     print(f"h2(0.0, 1.0, 3.0) = {test_h2}")
